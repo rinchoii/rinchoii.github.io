@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rin Choi</title>
+  <meta name="description" content="Rin Choi — Legal Studies, research, advocacy, and leadership.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --background: #f8f7f3;
+      --text: #1c1c1c;
+      --muted: #686868;
+      --accent: #6b1d2a;
+      --line: #d8d5cf;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+      width: 100%;
+      padding: 28px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+      background: rgba(248, 247, 243, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 21px;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 0.7px;
+    }
+
+    nav ul a:hover {
+      color: var(--accent);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      padding: 110px 12% 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: clamp(64px, 9vw, 125px);
+      line-height: 0.95;
+      letter-spacing: -3px;
+      margin-bottom: 38px;
+    }
+
+    .hero-text {
+      max-width: 680px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 22px;
+      line-height: 1.55;
+      color: #3d3d3d;
+    }
+
+    .hero-meta {
+      margin-top: 45px;
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      border: 1px solid var(--text);
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--text);
+      color: var(--background);
+    }
+
+    .location {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 110px 8%;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-number {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 44px;
+      font-weight: 400;
+      margin-bottom: 50px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 80px;
+    }
+
+    .about-label {
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .about-copy {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      line-height: 1.65;
+    }
+
+    /* EXPERIENCE */
+
+    .entry {
+      display: grid;
+      grid-template-columns: 1fr 2.2fr;
+      gap: 50px;
+      padding: 35px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry-date {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .entry h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 6px;
+    }
+
+    .entry-subtitle {
+      color: var(--accent);
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    .entry p {
+      color: #555;
+      font-size: 14px;
+      max-width: 650px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      padding-top: 130px;
+      padding-bottom: 130px;
+    }
+
+    .contact h2 {
+      font-size: clamp(42px, 6vw, 72px);
+      margin-bottom: 25px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      margin-bottom: 35px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 30px 7%;
+      display: flex;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 0.5px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 750px) {
+      nav {
+        padding: 22px 6%;
+      }
+
+      nav ul {
+        gap: 15px;
+      }
+
+      nav ul li:nth-child(2),
+      nav ul li:nth-child(3) {
+        display: none;
+      }
+
+      .hero {
+        padding: 80px 8%;
+      }
+
+      h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero-text {
+        font-size: 19px;
+      }
+
+      section {
+        padding: 80px 8%;
+      }
+
+      .about-grid,
+      .entry {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .about-copy {
+        font-size: 20px;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#" class="name">RIN CHOI</a>
+
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#leadership">Leadership</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <main>
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <p class="eyebrow">
+        Legal Studies · Research · Advocacy
+      </p>
+
+      <h1>Rin Choi</h1>
+
+      <p class="hero-text">
+        Legal Studies student at the University of Southern California
+        interested in litigation, technology, privacy, and the intersection
+        of law across borders.
+      </p>
+
+      <div class="hero-meta">
+        <a href="#about" class="button">Explore</a>
+        <span class="location">Los Angeles, California</span>
+      </div>
+
+    </div>
+
+
+    <!-- ABOUT -->
+
+    <section id="about">
+
+      <p class="section-number">01 / About</p>
+
+      <h2>About</h2>
+
+      <div class="about-grid">
+
+        <p class="about-label">
+          Background
+        </p>
+
+        <p class="about-copy">
+          I am an undergraduate Legal Studies student at the University of
+          Southern California, where my work focuses on law, advocacy,
+          research, and leadership. My experiences across the United States
+          and Korea have shaped my interest in legal issues that cross
+          institutional and national boundaries.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+
+    <section id="education">
+
+      <p class="section-number">02 / Education</p>
+
+      <h2>Education</h2>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          University of Southern California
+        </div>
+
+        <div>
+          <h3>B.S. in Legal Studies</h3>
+          <p class="entry-subtitle">USC Gould School of Law</p>
+          <p>
+            Minor in Business Law. Academic interests include constitutional
+            law, privacy, technology, litigation, and international legal practice.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          Yonsei University
+        </div>
+
+        <div>
+          <h3>Study Abroad</h3>
+          <p class="entry-subtitle">Seoul, Republic of Korea</p>
+          <p>
+            Academic study in Seoul with advanced Korean-language coursework
+            and continued exploration of law and society across jurisdictions.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+
+    <section id="experience">
+
+      <p class="section-number">03 / Experience</p>
+
+      <h2>Selected Experience</h2>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          Legal Research
+        </div>
+
+        <div>
+          <h3>Legal & Business Strategy Researcher</h3>
+          <p class="entry-subtitle">Octosolution LLC</p>
+          <p>
+            Conduct research supporting legal and business strategy for a
+            technology company entering the California market.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          Legal Experience
+        </div>
+
+        <div>
+          <h3>Legal Internships</h3>
+          <p class="entry-subtitle">United States & Republic of Korea</p>
+          <p>
+            Experience involving legal research, discovery, drafting,
+            privacy matters, client-facing work, and comparative legal issues.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- LEADERSHIP -->
+
+    <section id="leadership">
+
+      <p class="section-number">04 / Leadership</p>
+
+      <h2>Leadership & Advocacy</h2>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          USC
+        </div>
+
+        <div>
+          <h3>President</h3>
+          <p class="entry-subtitle">
+            Legal Studies Student Association
+          </p>
+          <p>
+            Lead an undergraduate organization connecting students with
+            academic, professional, mentorship, and community opportunities
+            in legal studies.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="entry">
+
+        <div class="entry-date">
+          Moot Court
+        </div>
+
+        <div>
+          <h3>Advocate & Team Leader</h3>
+          <p class="entry-subtitle">
+            Southern California Moot Court
+          </p>
+          <p>
+            Competed nationally in appellate advocacy and contributed to
+            brief writing, oral advocacy, competition preparation, and
+            team leadership.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section class="contact" id="contact">
+
+      <p class="section-number">05 / Contact</p>
+
+      <h2>Let's connect.</h2>
+
+      <p>
+        For professional, academic, or research inquiries.
+      </p>
+
+      <a href="mailto:rinchoi@usc.edu" class="button">
+        Email Me
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+    <span>© 2026 Rin Choi</span>
+    <span>Los Angeles, California</span>
+  </footer>
+
+</body>
+</html>
