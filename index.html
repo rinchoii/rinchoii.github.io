@@ -1,930 +1,1426 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Rin Choi | Legal Studies</title>
-<meta name="description" content="Rin Choi — Legal Studies, legal research, advocacy, and leadership.">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-:root {
-    --bg: #f8f7f3;
-    --text: #1b1b1b;
-    --muted: #68645f;
-    --accent: #711f2b;
-    --line: #d8d4cd;
-}
-
-body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.6;
-}
-
-a {
-    color: inherit;
-}
-
-
-/* NAVIGATION */
-
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    height: 90px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 7%;
-
-    background: rgba(248,247,243,.97);
-    border-bottom: 1px solid var(--line);
-}
-
-.logo {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    letter-spacing: 2px;
-    text-decoration: none;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 31px;
-    list-style: none;
-}
-
-.nav-links a {
-    text-decoration: none;
-    font-size: 12px;
-    letter-spacing: .7px;
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: var(--accent);
-}
-
-.resume-link {
-    padding-bottom: 3px;
-    border-bottom: 1px solid var(--text);
-}
-
-
-/* HERO */
-
-.hero {
-    min-height: calc(100vh - 90px);
-
-    display: flex;
-    align-items: center;
-
-    max-width: 1250px;
-    margin: auto;
-    padding: 90px 8%;
-}
-
-.hero-inner {
-    width: 100%;
-}
-
-.eyebrow {
-    color: var(--accent);
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    font-size: 11px;
-    margin-bottom: 28px;
-}
-
-h1 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(70px, 10vw, 128px);
-    font-weight: 400;
-    letter-spacing: -5px;
-    line-height: .9;
-}
-
-.hero-bottom {
-    margin-top: 55px;
-
-    display: grid;
-    grid-template-columns: 1.7fr 1fr;
-    gap: 90px;
-    align-items: end;
-}
-
-.intro {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: clamp(20px, 2.1vw, 27px);
-    line-height: 1.55;
-    max-width: 720px;
-}
-
-.hero-details {
-    color: var(--muted);
-    font-size: 12px;
-    line-height: 2;
-}
-
-.hero-details span {
-    display: block;
-}
-
-
-/* SECTIONS */
-
-section {
-    max-width: 1200px;
-    margin: auto;
-    padding: 115px 8%;
-    border-top: 1px solid var(--line);
-}
-
-.section-header {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 50px;
-    margin-bottom: 65px;
-}
-
-.section-number {
-    color: var(--accent);
-    font-size: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-h2 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: clamp(38px, 5vw, 57px);
-    line-height: 1.1;
-}
-
-
-/* ABOUT */
-
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 50px;
-}
-
-.small-label {
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: 1.8px;
-    text-transform: uppercase;
-}
-
-.about-text {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 22px;
-    line-height: 1.75;
-    max-width: 800px;
-}
-
-
-/* ENTRIES */
-
-.entry {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 50px;
-
-    padding: 36px 0;
-    border-top: 1px solid var(--line);
-}
-
-.entry:last-child {
-    border-bottom: 1px solid var(--line);
-}
-
-.entry-left {
-    color: var(--muted);
-    font-size: 12px;
-}
-
-.entry-left span {
-    display: block;
-}
-
-.entry h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 23px;
-    font-weight: 400;
-    line-height: 1.3;
-}
-
-.role {
-    color: var(--accent);
-    font-size: 12px;
-    margin: 6px 0 14px;
-    letter-spacing: .2px;
-}
-
-.description {
-    max-width: 690px;
-    color: #52504d;
-    font-size: 14px;
-    line-height: 1.75;
-}
-
-
-/* RESEARCH */
-
-.research-feature {
-    padding: 65px;
-    border: 1px solid var(--line);
-}
-
-.research-type {
-    color: var(--accent);
-    text-transform: uppercase;
-    font-size: 10px;
-    letter-spacing: 2px;
-}
-
-.research-feature h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-weight: 400;
-    font-size: clamp(30px, 4vw, 46px);
-    line-height: 1.2;
-    margin: 20px 0 30px;
-    max-width: 800px;
-}
-
-.research-feature p {
-    max-width: 720px;
-    color: #55514d;
-    font-size: 14px;
-    line-height: 1.8;
-}
-
-
-/* HONORS */
-
-.honors-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    border-top: 1px solid var(--line);
-}
-
-.honor {
-    padding: 30px 25px 30px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.honor:nth-child(odd) {
-    border-right: 1px solid var(--line);
-}
-
-.honor:nth-child(even) {
-    padding-left: 30px;
-}
-
-.honor-year {
-    color: var(--accent);
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.honor h3 {
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 7px;
-}
-
-.honor p {
-    color: var(--muted);
-    font-size: 12px;
-    margin-top: 4px;
-}
-
-
-/* CONTACT */
-
-.contact {
-    text-align: center;
-    padding-top: 140px;
-    padding-bottom: 140px;
-}
-
-.contact .section-number {
-    margin-bottom: 25px;
-}
-
-.contact h2 {
-    font-size: clamp(50px, 7vw, 80px);
-    margin-bottom: 25px;
-}
-
-.contact > p {
-    color: var(--muted);
-    margin-bottom: 40px;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 18px;
-}
-
-.buttons {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-}
-
-.button {
-    display: inline-block;
-    padding: 13px 25px;
-
-    border: 1px solid var(--text);
-
-    text-decoration: none;
-    text-transform: uppercase;
-
-    font-size: 10px;
-    letter-spacing: 1.5px;
-
-    transition: .2s;
-}
-
-.button:hover {
-    background: var(--text);
-    color: var(--bg);
-}
-
-
-/* FOOTER */
-
-footer {
-    border-top: 1px solid var(--line);
-
-    display: flex;
-    justify-content: space-between;
-
-    padding: 28px 7%;
-
-    color: var(--muted);
-    font-size: 10px;
-    letter-spacing: .7px;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-    nav {
-        height: 75px;
-        padding: 0 6%;
-    }
-
-    .nav-links {
-        gap: 15px;
-    }
-
-    .nav-links li:nth-child(2),
-    .nav-links li:nth-child(3),
-    .nav-links li:nth-child(4) {
-        display: none;
-    }
-
-    .hero {
-        min-height: calc(100vh - 75px);
-        padding: 70px 8%;
-    }
-
-    h1 {
-        letter-spacing: -3px;
-    }
-
-    .hero-bottom,
-    .section-header,
-    .about-content,
-    .entry {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .hero-bottom {
-        gap: 35px;
-    }
-
-    section {
-        padding: 80px 8%;
-    }
-
-    .section-header {
-        margin-bottom: 45px;
-    }
-
-    .research-feature {
-        padding: 35px 25px;
-    }
-
-    .honors-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .honor:nth-child(odd) {
-        border-right: none;
-    }
-
-    .honor:nth-child(even) {
-        padding-left: 0;
-    }
-
-    .buttons {
-        flex-direction: column;
-        max-width: 230px;
-        margin: auto;
-    }
-
-    footer {
-        flex-direction: column;
-        gap: 7px;
-    }
-}
-
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rin Choi | Legal Studies</title>
+
+    <meta
+        name="description"
+        content="Rin Choi — Legal Studies, legal research, advocacy, and leadership."
+    >
+
+    <style>
+
+        /* =========================================
+           GLOBAL
+        ========================================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --background: #f8f7f3;
+            --text: #1c1c1c;
+            --muted: #686868;
+            --accent: #6b1d2a;
+            --line: #d8d5cf;
+        }
+
+        body {
+            background: var(--background);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+        }
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            height: 90px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            background: rgba(248, 247, 243, 0.97);
+            border-bottom: 1px solid var(--line);
+        }
+
+        .logo {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            letter-spacing: 2px;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 12px;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .resume-nav {
+            padding-bottom: 3px;
+            border-bottom: 1px solid var(--text);
+        }
+
+
+        /* =========================================
+           HERO
+        ========================================= */
+
+        .hero {
+            min-height: calc(100vh - 90px);
+
+            display: flex;
+            align-items: center;
+
+            max-width: 1250px;
+            margin: 0 auto;
+
+            padding: 90px 8%;
+        }
+
+        .hero-inner {
+            width: 100%;
+        }
+
+        .eyebrow {
+            margin-bottom: 28px;
+
+            color: var(--accent);
+
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(70px, 10vw, 128px);
+            font-weight: 400;
+            letter-spacing: -5px;
+            line-height: 0.9;
+        }
+
+        .hero-bottom {
+            margin-top: 55px;
+
+            display: grid;
+            grid-template-columns: 1.7fr 1fr;
+            gap: 90px;
+
+            align-items: end;
+        }
+
+        .intro {
+            max-width: 720px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(20px, 2.1vw, 27px);
+            line-height: 1.55;
+        }
+
+        .hero-details {
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 2;
+        }
+
+        .hero-details span {
+            display: block;
+        }
+
+
+        /* =========================================
+           GENERAL SECTIONS
+        ========================================= */
+
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+
+            padding: 115px 8%;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .section-header {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 50px;
+
+            margin-bottom: 65px;
+        }
+
+        .section-number {
+            color: var(--accent);
+
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: clamp(38px, 5vw, 57px);
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+
+        /* =========================================
+           ABOUT
+        ========================================= */
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1.05fr 1.35fr;
+            gap: 80px;
+
+            align-items: start;
+        }
+
+        .portrait-wrap {
+            width: 100%;
+        }
+
+        .portrait {
+            display: block;
+
+            width: 100%;
+            height: 560px;
+
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .photo-caption {
+            margin-top: 12px;
+
+            color: var(--muted);
+
+            font-size: 9px;
+            letter-spacing: 1.4px;
+            text-transform: uppercase;
+        }
+
+        .about-right {
+            padding-top: 5px;
+        }
+
+        .about-text {
+            max-width: 700px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 21px;
+            line-height: 1.75;
+        }
+
+        .about-details {
+            margin-top: 50px;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .about-detail {
+            display: grid;
+            grid-template-columns: 125px 1fr;
+            gap: 25px;
+
+            padding: 17px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .about-detail-label {
+            color: var(--muted);
+
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        .about-detail-value {
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 14px;
+        }
+
+
+        /* =========================================
+           EXPERIENCE / EDUCATION / LEADERSHIP
+        ========================================= */
+
+        .entry {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            gap: 50px;
+
+            padding: 36px 0;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .entry:last-child {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .entry-left {
+            color: var(--muted);
+
+            font-size: 12px;
+            line-height: 1.8;
+        }
+
+        .entry-left span {
+            display: block;
+        }
+
+        .entry h3 {
+            font-family: Georgia, "Times New Roman", serif;
+
+            font-size: 23px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .role {
+            margin: 6px 0 14px;
+
+            color: var(--accent);
+
+            font-size: 12px;
+            letter-spacing: 0.2px;
+        }
+
+        .description {
+            max-width: 690px;
+
+            color: #52504d;
+
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* =========================================
+           RESEARCH
+        ========================================= */
+
+        .research-feature {
+            padding: 65px;
+
+            border: 1px solid var(--line);
+        }
+
+        .research-type {
+            color: var(--accent);
+
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .research-feature h3 {
+            max-width: 800px;
+
+            margin: 20px 0 30px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(30px, 4vw, 46px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .research-feature p:last-child {
+            max-width: 720px;
+
+            color: #55514d;
+
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* =========================================
+           HONORS
+        ========================================= */
+
+        .honors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            border-top: 1px solid var(--line);
+        }
+
+        .honor {
+            padding: 30px 25px 30px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .honor:nth-child(odd) {
+            border-right: 1px solid var(--line);
+        }
+
+        .honor:nth-child(even) {
+            padding-left: 30px;
+        }
+
+        .honor-year {
+            color: var(--accent);
+
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .honor h3 {
+            margin-top: 7px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+            font-weight: 400;
+        }
+
+        .honor p {
+            margin-top: 4px;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================
+           CONTACT
+        ========================================= */
+
+        .contact {
+            padding-top: 140px;
+            padding-bottom: 140px;
+
+            text-align: center;
+        }
+
+        .contact .section-number {
+            margin-bottom: 25px;
+        }
+
+        .contact h2 {
+            margin-bottom: 25px;
+
+            font-size: clamp(50px, 7vw, 80px);
+        }
+
+        .contact-text {
+            margin-bottom: 40px;
+
+            color: var(--muted);
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 18px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .button {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border: 1px solid var(--text);
+
+            font-size: 10px;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition:
+                background 0.2s ease,
+                color 0.2s ease;
+        }
+
+        .button:hover {
+            background: var(--text);
+            color: var(--background);
+        }
+
+
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+
+            padding: 28px 7%;
+
+            border-top: 1px solid var(--line);
+
+            color: var(--muted);
+
+            font-size: 10px;
+            letter-spacing: 0.7px;
+        }
+
+
+        /* =========================================
+           MOBILE
+        ========================================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                height: 75px;
+                padding: 0 6%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links li:nth-child(2),
+            .nav-links li:nth-child(3),
+            .nav-links li:nth-child(4),
+            .nav-links li:nth-child(6) {
+                display: none;
+            }
+
+            .hero {
+                min-height: calc(100vh - 75px);
+                padding: 70px 8%;
+            }
+
+            h1 {
+                letter-spacing: -3px;
+            }
+
+            .hero-bottom,
+            .section-header,
+            .about-layout,
+            .entry {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-bottom {
+                gap: 35px;
+            }
+
+            .section-header {
+                gap: 20px;
+                margin-bottom: 45px;
+            }
+
+            section {
+                padding: 80px 8%;
+            }
+
+            .about-layout {
+                gap: 40px;
+            }
+
+            .portrait {
+                height: 480px;
+            }
+
+            .about-right {
+                padding-top: 0;
+            }
+
+            .about-detail {
+                grid-template-columns: 100px 1fr;
+            }
+
+            .entry {
+                gap: 18px;
+            }
+
+            .research-feature {
+                padding: 35px 25px;
+            }
+
+            .honors-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .honor:nth-child(odd) {
+                border-right: none;
+            }
+
+            .honor:nth-child(even) {
+                padding-left: 0;
+            }
+
+            .buttons {
+                flex-direction: column;
+
+                max-width: 230px;
+                margin: 0 auto;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 7px;
+            }
+        }
+
+    </style>
+
 </head>
 
 
 <body>
 
 
-<!-- NAV -->
+    <!-- =========================================
+         NAVIGATION
+    ========================================== -->
 
-<nav>
+    <nav>
 
-    <a class="logo" href="#">RIN CHOI</a>
+        <a class="logo" href="#">RIN CHOI</a>
 
-    <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#research">Research</a></li>
-        <li>
-            <a class="resume-link"
-               href="Rin-Choi-Resume.pdf"
-               target="_blank">
-               Résumé
-            </a>
-        </li>
-    </ul>
+        <ul class="nav-links">
 
-</nav>
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#leadership">Leadership</a>
+            </li>
+
+            <li>
+                <a href="#research">Research</a>
+            </li>
+
+            <li>
+                <a
+                    class="resume-nav"
+                    href="Rin-Choi-Resume.pdf"
+                    target="_blank"
+                >
+                    Résumé
+                </a>
+            </li>
+
+            <li>
+                <a
+                    href="https://www.linkedin.com/in/rinchoiii/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn ↗
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
 
 
-<main>
+
+    <main>
 
 
-<!-- HERO -->
+        <!-- =========================================
+             HERO
+        ========================================== -->
 
-<div class="hero">
+        <div class="hero">
 
-    <div class="hero-inner">
+            <div class="hero-inner">
 
-        <p class="eyebrow">
-            Legal Studies · Research · Advocacy
-        </p>
+                <p class="eyebrow">
+                    Legal Studies · Research · Advocacy
+                </p>
 
-        <h1>Rin Choi</h1>
+                <h1>Rin Choi</h1>
 
-        <div class="hero-bottom">
+                <div class="hero-bottom">
 
-            <p class="intro">
-                Legal Studies student at the University of Southern California
-                interested in litigation, privacy, technology, and legal issues
-                that cross borders.
-            </p>
+                    <p class="intro">
+                        Legal Studies student at the University of Southern
+                        California interested in litigation, privacy,
+                        technology, and legal issues that cross borders.
+                    </p>
 
-            <div class="hero-details">
-                <span>University of Southern California</span>
-                <span>B.S. Legal Studies · Business Law</span>
-                <span>Los Angeles, California</span>
+                    <div class="hero-details">
+
+                        <span>
+                            University of Southern California
+                        </span>
+
+                        <span>
+                            B.S. Legal Studies · Business Law
+                        </span>
+
+                        <span>
+                            Los Angeles, California
+                        </span>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
-    </div>
-
-</div>
 
 
-<!-- ABOUT -->
+        <!-- =========================================
+             ABOUT
+        ========================================== -->
 
-<section id="about">
+        <section id="about">
 
-    <div class="section-header">
-        <p class="section-number">01 / About</p>
-        <h2>Law, advocacy, and research across borders.</h2>
-    </div>
+            <div class="section-header">
 
-    <div class="about-content">
+                <p class="section-number">
+                    01 / About
+                </p>
 
-        <p class="small-label">Background</p>
+                <h2>
+                    Law, advocacy, and research across borders.
+                </h2>
 
-        <p class="about-text">
-            I am a Legal Studies student at the University of Southern California
-            with experience in legal research, litigation support, advocacy, and
-            organizational leadership in both the United States and South Korea.
-            My academic interests center on constitutional law, privacy,
-            technology, and litigation.
-        </p>
-
-    </div>
-
-</section>
+            </div>
 
 
-<!-- EDUCATION -->
+            <div class="about-layout">
 
-<section id="education">
 
-    <div class="section-header">
-        <p class="section-number">02 / Education</p>
-        <h2>Education</h2>
-    </div>
+                <div class="portrait-wrap">
 
-    <div class="entry">
+                    <img
+                        src="Rin-Choi.JPG"
+                        alt="Portrait of Rin Choi"
+                        class="portrait"
+                    >
 
-        <div class="entry-left">
-            <span>Los Angeles, California</span>
-            <span>2023 — 2027</span>
-        </div>
+                    <p class="photo-caption">
+                        University of Southern California · Los Angeles
+                    </p>
 
-        <div>
-            <h3>University of Southern California</h3>
+                </div>
 
-            <p class="role">
-                B.S. Legal Studies · Minor in Business Law
+
+                <div class="about-right">
+
+                    <p class="about-text">
+                        I am a Legal Studies student at the University of
+                        Southern California with experience in legal research,
+                        litigation support, advocacy, and organizational
+                        leadership in both the United States and South Korea.
+                        My academic interests center on constitutional law,
+                        privacy, technology, and litigation.
+                    </p>
+
+
+                    <div class="about-details">
+
+                        <div class="about-detail">
+
+                            <span class="about-detail-label">
+                                Education
+                            </span>
+
+                            <span class="about-detail-value">
+                                University of Southern California
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-detail">
+
+                            <span class="about-detail-label">
+                                Degree
+                            </span>
+
+                            <span class="about-detail-value">
+                                B.S. Legal Studies · Minor in Business Law
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-detail">
+
+                            <span class="about-detail-label">
+                                Study Abroad
+                            </span>
+
+                            <span class="about-detail-value">
+                                Yonsei University · Seoul
+                            </span>
+
+                        </div>
+
+
+                        <div class="about-detail">
+
+                            <span class="about-detail-label">
+                                Interests
+                            </span>
+
+                            <span class="about-detail-value">
+                                Litigation · Privacy · Technology · International Law
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EDUCATION
+        ========================================== -->
+
+        <section id="education">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    02 / Education
+                </p>
+
+                <h2>Education.</h2>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Los Angeles, California</span>
+                    <span>2023 — 2027</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        University of Southern California
+                    </h3>
+
+                    <p class="role">
+                        B.S. Legal Studies · Minor in Business Law
+                    </p>
+
+                    <p class="description">
+                        USC Gould School of Law. Academic work spanning
+                        constitutional law, legal research, privacy,
+                        technology, and business law.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Seoul, South Korea</span>
+                    <span>Spring 2026</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Yonsei University
+                    </h3>
+
+                    <p class="role">
+                        Study Abroad
+                    </p>
+
+                    <p class="description">
+                        Semester study in Seoul, including advanced
+                        Korean-language coursework and continued study
+                        in an international academic environment.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             EXPERIENCE
+        ========================================== -->
+
+        <section id="experience">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    03 / Experience
+                </p>
+
+                <h2>
+                    Selected legal & professional experience.
+                </h2>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Seoul / Remote</span>
+                    <span>2026 — Present</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Octosolution LLC
+                    </h3>
+
+                    <p class="role">
+                        Legal & Business Strategy Researcher
+                    </p>
+
+                    <p class="description">
+                        Conduct legal and regulatory research supporting a
+                        Korea-based technology company's entry into the
+                        California market, alongside research on venture
+                        capital, angel investment, and early-stage
+                        fundraising opportunities.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Los Angeles, California</span>
+                    <span>2025</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Law Offices of Jack D. Josephson, APC
+                    </h3>
+
+                    <p class="role">
+                        Paralegal
+                    </p>
+
+                    <p class="description">
+                        Supported outreach to Korean American communities
+                        in Los Angeles through bilingual resources and
+                        client engagement.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Orange County, California</span>
+                    <span>2024 — 2025</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Law Offices of Li & Yang
+                    </h3>
+
+                    <p class="role">
+                        Legal Intern
+                    </p>
+
+                    <p class="description">
+                        Worked on civil litigation matters involving
+                        discovery, California procedural research,
+                        demand letters, court filings, judgment enforcement,
+                        and case management.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Seoul, South Korea</span>
+                    <span>2024</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Law Firm Lin
+                    </h3>
+
+                    <p class="role">
+                        Legal Intern
+                    </p>
+
+                    <p class="description">
+                        Researched U.S. legal protections and translated
+                        memoranda concerning Korean privacy and
+                        user-agreement law for international business matters.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>Los Angeles, California</span>
+                    <span>2024</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Los Angeles County District Attorney's Office
+                    </h3>
+
+                    <p class="role">
+                        Intern
+                    </p>
+
+                    <p class="description">
+                        Supported case work involving evidence organization,
+                        recorded inmate communications, court proceedings,
+                        and operations at the Eastlake Juvenile Center.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             LEADERSHIP
+        ========================================== -->
+
+        <section id="leadership">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    04 / Leadership
+                </p>
+
+                <h2>
+                    Leadership & advocacy.
+                </h2>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>USC</span>
+                    <span>2023 — Present</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Legal Studies Student Association
+                    </h3>
+
+                    <p class="role">
+                        President · Founding Member
+                    </p>
+
+                    <p class="description">
+                        Lead an undergraduate organization focused on
+                        strengthening academic, professional, mentorship,
+                        and community opportunities for students in USC's
+                        Legal Studies program.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="entry">
+
+                <div class="entry-left">
+
+                    <span>American Moot Court Association</span>
+                    <span>2023 — 2026</span>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Southern California Moot Court
+                    </h3>
+
+                    <p class="role">
+                        Head of Brief Writing · VP of Competition Affairs · Oral Advocate
+                    </p>
+
+                    <p class="description">
+                        Competed in appellate advocacy and contributed to
+                        legal brief writing, oral argument preparation,
+                        competition strategy, and team leadership.
+                        National semifinalist and nationally recognized
+                        individual oral advocate.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             RESEARCH
+        ========================================== -->
+
+        <section id="research">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    05 / Research
+                </p>
+
+                <h2>
+                    Current research.
+                </h2>
+
+            </div>
+
+
+            <div class="research-feature">
+
+                <p class="research-type">
+                    Senior Capstone Thesis · USC
+                </p>
+
+                <h3>
+                    The Testimoniality of Biometrics Under the Fifth Amendment
+                </h3>
+
+                <p>
+                    Independent legal research examining whether compelled
+                    biometric authentication implicates the Fifth Amendment
+                    privilege against self-incrimination. The project analyzes
+                    emerging case law concerning digital-device searches and
+                    considers how courts should evaluate the testimonial
+                    character of biometric authentication.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             HONORS
+        ========================================== -->
+
+        <section id="honors">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    06 / Selected Honors
+                </p>
+
+                <h2>
+                    Recognition.
+                </h2>
+
+            </div>
+
+
+            <div class="honors-grid">
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        2026
+                    </span>
+
+                    <h3>
+                        3rd Best Team
+                    </h3>
+
+                    <p>
+                        AMCA National Tournament
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        2026
+                    </span>
+
+                    <h3>
+                        4th Best Individual Orator
+                    </h3>
+
+                    <p>
+                        AMCA National Tournament
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        2025
+                    </span>
+
+                    <h3>
+                        Invitational Champion
+                    </h3>
+
+                    <p>
+                        CSULB Moot Court Invitational
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        2024
+                    </span>
+
+                    <h3>
+                        USC Internal Moot Court Champion
+                    </h3>
+
+                    <p>
+                        Southern California Moot Court
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        2024 · 2025
+                    </span>
+
+                    <h3>
+                        Dean's List Merit Scholarship
+                    </h3>
+
+                    <p>
+                        University of Southern California
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        Academic
+                    </span>
+
+                    <h3>
+                        Dean's List
+                    </h3>
+
+                    <p>
+                        University of Southern California
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================
+             CONTACT
+        ========================================== -->
+
+        <section class="contact" id="contact">
+
+            <p class="section-number">
+                07 / Contact
             </p>
 
-            <p class="description">
-                USC Gould School of Law. 4.00 GPA. Academic work spanning
-                constitutional law, legal research, privacy, technology,
-                and business law.
-            </p>
-        </div>
+            <h2>
+                Let's connect.
+            </h2>
 
-    </div>
-
-
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>Seoul, South Korea</span>
-            <span>Spring 2026</span>
-        </div>
-
-        <div>
-            <h3>Yonsei University</h3>
-
-            <p class="role">Study Abroad</p>
-
-            <p class="description">
-                Semester study in Seoul, including advanced Korean-language
-                coursework and continued study of law and society in an
-                international setting.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- EXPERIENCE -->
-
-<section id="experience">
-
-    <div class="section-header">
-        <p class="section-number">03 / Experience</p>
-        <h2>Selected legal & professional experience.</h2>
-    </div>
-
-
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>Seoul / Remote</span>
-            <span>2026 — Present</span>
-        </div>
-
-        <div>
-            <h3>Octosolution LLC</h3>
-
-            <p class="role">
-                Legal & Business Strategy Researcher
+            <p class="contact-text">
+                For professional, academic, or research inquiries.
             </p>
 
-            <p class="description">
-                Conduct legal and regulatory research supporting a
-                Korea-based technology company's entry into the California
-                market, alongside research on venture capital, angel investment,
-                and early-stage fundraising opportunities.
-            </p>
-        </div>
 
-    </div>
+            <div class="buttons">
 
+                <a
+                    class="button"
+                    href="mailto:rinchoi@usc.edu"
+                >
+                    Email
+                </a>
 
-    <div class="entry">
 
-        <div class="entry-left">
-            <span>Los Angeles, California</span>
-            <span>2025</span>
-        </div>
+                <a
+                    class="button"
+                    href="Rin-Choi-Resume.pdf"
+                    target="_blank"
+                >
+                    View Résumé
+                </a>
 
-        <div>
-            <h3>Law Offices of Jack D. Josephson, APC</h3>
 
-            <p class="role">Paralegal</p>
+                <a
+                    class="button"
+                    href="https://www.linkedin.com/in/rinchoiii/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    LinkedIn
+                </a>
 
-            <p class="description">
-                Supported the firm's outreach to Korean American communities
-                in Los Angeles through bilingual resources and client recruitment.
-            </p>
-        </div>
+            </div>
 
-    </div>
+        </section>
 
 
-    <div class="entry">
+    </main>
 
-        <div class="entry-left">
-            <span>Orange County, California</span>
-            <span>2024 — 2025</span>
-        </div>
 
-        <div>
-            <h3>Law Offices of Li & Yang</h3>
 
-            <p class="role">Legal Intern</p>
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-            <p class="description">
-                Worked on civil litigation matters involving discovery,
-                California procedural research, demand letters, court filings,
-                judgment enforcement, and case management.
-            </p>
-        </div>
+    <footer>
 
-    </div>
+        <span>
+            © 2026 Rin Choi
+        </span>
 
+        <span>
+            Los Angeles · Seoul
+        </span>
 
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>Seoul, South Korea</span>
-            <span>2024</span>
-        </div>
-
-        <div>
-            <h3>Law Firm Lin</h3>
-
-            <p class="role">Legal Intern</p>
-
-            <p class="description">
-                Researched U.S. privacy protections and translated legal
-                memoranda concerning Korean privacy and user-agreement law
-                for international business matters.
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>Los Angeles, California</span>
-            <span>2024</span>
-        </div>
-
-        <div>
-            <h3>Los Angeles County District Attorney's Office</h3>
-
-            <p class="role">Intern</p>
-
-            <p class="description">
-                Supported case work involving evidence organization,
-                recorded inmate communications, court proceedings,
-                and operations at the Eastlake Juvenile Center.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- LEADERSHIP -->
-
-<section id="leadership">
-
-    <div class="section-header">
-        <p class="section-number">04 / Leadership</p>
-        <h2>Leadership & advocacy.</h2>
-    </div>
-
-
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>USC</span>
-            <span>2023 — Present</span>
-        </div>
-
-        <div>
-            <h3>Legal Studies Student Association</h3>
-
-            <p class="role">
-                President · Founding Member
-            </p>
-
-            <p class="description">
-                Lead an undergraduate organization focused on strengthening
-                academic, professional, mentorship, and community opportunities
-                for students in USC's Legal Studies program.
-            </p>
-        </div>
-
-    </div>
-
-
-    <div class="entry">
-
-        <div class="entry-left">
-            <span>American Moot Court Association</span>
-            <span>2023 — Present</span>
-        </div>
-
-        <div>
-            <h3>Southern California Moot Court</h3>
-
-            <p class="role">
-                Head of Brief Writing · VP of Competition Affairs · Oral Advocate
-            </p>
-
-            <p class="description">
-                Compete in appellate advocacy and contribute to legal brief
-                writing, oral argument preparation, competition strategy,
-                and team leadership. National semifinalist and nationally
-                recognized individual oral advocate.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- RESEARCH -->
-
-<section id="research">
-
-    <div class="section-header">
-        <p class="section-number">05 / Research</p>
-        <h2>Current research.</h2>
-    </div>
-
-    <div class="research-feature">
-
-        <p class="research-type">
-            Senior Capstone Thesis · USC
-        </p>
-
-        <h3>
-            The Testimoniality of Biometric Evidence
-        </h3>
-
-        <p>
-            Independent legal research examining whether compelled biometric
-            authentication implicates the Fifth Amendment privilege against
-            self-incrimination. The project analyzes emerging case law concerning
-            digital-device searches and considers how courts should evaluate the
-            testimonial character of biometric authentication.
-        </p>
-
-    </div>
-
-</section>
-
-
-<!-- HONORS -->
-
-<section id="honors">
-
-    <div class="section-header">
-        <p class="section-number">06 / Selected Honors</p>
-        <h2>Recognition.</h2>
-    </div>
-
-
-    <div class="honors-grid">
-
-        <div class="honor">
-            <span class="honor-year">2026</span>
-            <h3>3rd Best Team</h3>
-            <p>AMCA National Tournament</p>
-        </div>
-
-        <div class="honor">
-            <span class="honor-year">2026</span>
-            <h3>4th Best Individual Orator</h3>
-            <p>AMCA National Tournament</p>
-        </div>
-
-        <div class="honor">
-            <span class="honor-year">2025</span>
-            <h3>Invitational Champion</h3>
-            <p>CSULB Moot Court Invitational</p>
-        </div>
-
-        <div class="honor">
-            <span class="honor-year">2024</span>
-            <h3>USC Internal Moot Court Champion</h3>
-            <p>Southern California Moot Court</p>
-        </div>
-
-        <div class="honor">
-            <span class="honor-year">2024 · 2025</span>
-            <h3>Dean's List Merit Scholarship</h3>
-            <p>University of Southern California</p>
-        </div>
-
-        <div class="honor">
-            <span class="honor-year">5×</span>
-            <h3>Dean's List</h3>
-            <p>University of Southern California</p>
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section class="contact" id="contact">
-
-    <p class="section-number">07 / Contact</p>
-
-    <h2>Let's connect.</h2>
-
-    <p>
-        For professional, academic, or research inquiries.
-    </p>
-
-    <div class="buttons">
-
-        <a class="button"
-           href="mailto:rinchoi@usc.edu">
-           Email
-        </a>
-
-        <a class="button"
-           href="Rin-Choi-Resume.pdf"
-           target="_blank">
-           View Résumé
-        </a>
-
-    </div>
-
-</section>
-
-
-</main>
-
-
-<footer>
-
-    <span>© 2026 Rin Choi</span>
-
-    <span>
-        Los Angeles · Seoul
-    </span>
-
-</footer>
+    </footer>
 
 
 </body>
+
 </html>
