@@ -432,7 +432,131 @@
             border-color: var(--accent);
         }
 
+/* =========================================
+   ADVOCACY
+========================================= */
 
+.advocacy-intro {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+
+    margin-bottom: 55px;
+}
+
+.advocacy-label {
+    color: var(--accent);
+
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.advocacy-text {
+    max-width: 720px;
+
+    color: #52504d;
+
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+
+/* PHOTO GALLERY */
+
+.advocacy-gallery {
+    display: grid;
+    grid-template-columns: 1.45fr 0.85fr;
+    gap: 14px;
+
+    margin-bottom: 15px;
+}
+
+.advocacy-main-photo {
+    width: 100%;
+    height: 650px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+.advocacy-side {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+}
+
+.advocacy-side img {
+    width: 100%;
+    height: 318px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+}
+
+.advocacy-caption {
+    margin-bottom: 55px;
+
+    color: var(--muted);
+
+    font-size: 9px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+}
+
+
+/* RESULTS */
+
+.advocacy-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--line);
+}
+
+.advocacy-result {
+    padding: 28px 25px 28px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.advocacy-result:not(:nth-child(3n)) {
+    border-right: 1px solid var(--line);
+}
+
+.advocacy-result:not(:nth-child(3n+1)) {
+    padding-left: 25px;
+}
+
+.advocacy-year {
+    color: var(--accent);
+
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+}
+
+.advocacy-result h3 {
+    margin-top: 7px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.advocacy-result p {
+    margin-top: 5px;
+
+    color: var(--muted);
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+        
         /* =========================================
            RESEARCH
         ========================================= */
@@ -733,24 +857,25 @@
         <ul class="nav-links">
 
             <li>
-                <a href="#about">About</a>
-            </li>
+    <a href="#about">About</a>
+</li>
 
-            <li>
-                <a href="#experience">Experience</a>
-            </li>
+<li>
+    <a href="#experience">Experience</a>
+</li>
 
-            <li>
-                <a href="#writing">Writing</a>
-            </li>
+<li>
+    <a href="#writing">Writing</a>
+</li>
 
-            <li>
-                <a href="#leadership">Leadership</a>
-            </li>
+<li>
+    <a href="#advocacy">Advocacy</a>
+</li>
 
-            <li>
-                <a href="#research">Research</a>
-            </li>
+<li>
+    <a href="#research">Research</a>
+</li>
+            
 
             <li>
                 <a
@@ -1421,7 +1546,130 @@
 
         </section>
 
+<!-- ADVOCACY -->
 
+<section id="advocacy">
+
+    <div class="section-header">
+
+        <p class="section-number">
+            05 / Advocacy
+        </p>
+
+        <h2>
+            Appellate advocacy & moot court.
+        </h2>
+
+    </div>
+
+
+    <div class="advocacy-intro">
+
+        <p class="advocacy-label">
+            American Moot Court Association
+        </p>
+
+        <p class="advocacy-summary">
+            I represented USC in appellate advocacy competitions through
+            Southern California Moot Court, advancing to the national
+            semifinals and earning individual recognition for oral advocacy.
+            My work included oral argument, legal research, brief writing,
+            and competition strategy.
+        </p>
+
+    </div>
+
+
+    <div class="advocacy-results">
+
+        <div class="advocacy-result">
+
+            <span class="advocacy-result-number">
+                3rd
+            </span>
+
+            <p class="advocacy-result-title">
+                National Semifinalist
+            </p>
+
+            <p class="advocacy-result-detail">
+                AMCA National Tournament · 2026
+            </p>
+
+        </div>
+
+
+        <div class="advocacy-result">
+
+            <span class="advocacy-result-number">
+                4th
+            </span>
+
+            <p class="advocacy-result-title">
+                Best Individual Orator
+            </p>
+
+            <p class="advocacy-result-detail">
+                AMCA National Tournament · 2026
+            </p>
+
+        </div>
+
+
+        <div class="advocacy-result">
+
+            <span class="advocacy-result-number">
+                1st
+            </span>
+
+            <p class="advocacy-result-title">
+                USC Internal Champion
+            </p>
+
+            <p class="advocacy-result-detail">
+                Southern California Moot Court · 2024
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="advocacy-gallery">
+
+        <div class="advocacy-gallery-main">
+
+            <img
+                src="Moot-Court-Judges.jpeg"
+                alt="Moot court advocates and judges following competition"
+            >
+
+        </div>
+
+
+        <div class="advocacy-gallery-side">
+
+            <img
+                src="Moot-Court-4th-Best-Orator.jpeg"
+                alt="Rin Choi following moot court competition"
+            >
+
+            <img
+                src="Moot-Court-Finalists.jpeg"
+                alt="Moot court finalists with awards"
+            >
+
+        </div>
+
+    </div>
+
+
+    <p class="advocacy-caption">
+        American Moot Court Association · Appellate Advocacy
+    </p>
+
+</section>
+        
 
         <!-- RESEARCH -->
 
@@ -1430,7 +1678,7 @@
             <div class="section-header">
 
                 <p class="section-number">
-                    06 / Research
+                    07 / Research
                 </p>
 
                 <h2>
@@ -1472,7 +1720,7 @@
             <div class="section-header">
 
                 <p class="section-number">
-                    07 / Selected Honors
+                    08 / Selected Honors
                 </p>
 
                 <h2>
@@ -1598,7 +1846,7 @@
         <section class="contact" id="contact">
 
             <p class="section-number">
-                08 / Contact
+                09 / Contact
             </p>
 
             <h2>
