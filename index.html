@@ -57,7 +57,7 @@
             top: 0;
             z-index: 1000;
 
-            height: 90px;
+            min-height: 90px;
 
             display: flex;
             align-items: center;
@@ -74,20 +74,22 @@
             font-size: 21px;
             letter-spacing: 2px;
             text-decoration: none;
+            white-space: nowrap;
         }
 
         .nav-links {
             display: flex;
             align-items: center;
-            gap: 28px;
+            gap: 23px;
 
             list-style: none;
         }
 
         .nav-links a {
-            font-size: 12px;
-            letter-spacing: 0.5px;
+            font-size: 11px;
+            letter-spacing: 0.4px;
             text-decoration: none;
+            white-space: nowrap;
 
             transition: color 0.2s ease;
         }
@@ -288,7 +290,7 @@
 
 
         /* =========================================
-           EXPERIENCE / EDUCATION / LEADERSHIP
+           STANDARD ENTRIES
         ========================================= */
 
         .entry {
@@ -340,6 +342,94 @@
 
             font-size: 14px;
             line-height: 1.75;
+        }
+
+
+        /* =========================================
+           SELECTED LEGAL WRITING
+        ========================================= */
+
+        .writing-list {
+            border-top: 1px solid var(--line);
+        }
+
+        .writing-item {
+            display: grid;
+            grid-template-columns: 70px 1fr 150px;
+            gap: 35px;
+
+            align-items: start;
+
+            padding: 48px 0;
+
+            border-bottom: 1px solid var(--line);
+        }
+
+        .writing-number {
+            padding-top: 6px;
+
+            color: var(--accent);
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: 14px;
+        }
+
+        .writing-category {
+            margin-bottom: 10px;
+
+            color: var(--accent);
+
+            font-size: 9px;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .writing-item h3 {
+            margin-bottom: 7px;
+
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(25px, 3vw, 35px);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        .writing-subtitle {
+            margin-bottom: 17px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            letter-spacing: 0.4px;
+        }
+
+        .writing-description {
+            max-width: 700px;
+
+            color: #52504d;
+
+            font-size: 13px;
+            line-height: 1.75;
+        }
+
+        .writing-link {
+            justify-self: end;
+
+            margin-top: 29px;
+            padding-bottom: 4px;
+
+            border-bottom: 1px solid var(--text);
+
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            text-transform: uppercase;
+
+            transition: color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .writing-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
 
@@ -513,10 +603,10 @@
            MOBILE
         ========================================= */
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
 
             nav {
-                height: 75px;
+                min-height: 75px;
                 padding: 0 6%;
             }
 
@@ -531,7 +621,8 @@
             .nav-links li:nth-child(2),
             .nav-links li:nth-child(3),
             .nav-links li:nth-child(4),
-            .nav-links li:nth-child(6) {
+            .nav-links li:nth-child(5),
+            .nav-links li:nth-child(7) {
                 display: none;
             }
 
@@ -584,6 +675,18 @@
                 gap: 18px;
             }
 
+            .writing-item {
+                grid-template-columns: 40px 1fr;
+                gap: 20px;
+            }
+
+            .writing-link {
+                grid-column: 2;
+                justify-self: start;
+
+                margin-top: 0;
+            }
+
             .research-feature {
                 padding: 35px 25px;
             }
@@ -621,9 +724,7 @@
 <body>
 
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
+    <!-- NAVIGATION -->
 
     <nav>
 
@@ -637,6 +738,10 @@
 
             <li>
                 <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#writing">Writing</a>
             </li>
 
             <li>
@@ -676,9 +781,7 @@
     <main>
 
 
-        <!-- =========================================
-             HERO
-        ========================================== -->
+        <!-- HERO -->
 
         <div class="hero">
 
@@ -722,9 +825,7 @@
 
 
 
-        <!-- =========================================
-             ABOUT
-        ========================================== -->
+        <!-- ABOUT -->
 
         <section id="about">
 
@@ -834,9 +935,7 @@
 
 
 
-        <!-- =========================================
-             EDUCATION
-        ========================================== -->
+        <!-- EDUCATION -->
 
         <section id="education">
 
@@ -914,9 +1013,7 @@
 
 
 
-        <!-- =========================================
-             EXPERIENCE
-        ========================================== -->
+        <!-- EXPERIENCE -->
 
         <section id="experience">
 
@@ -1089,16 +1186,168 @@
 
 
 
-        <!-- =========================================
-             LEADERSHIP
-        ========================================== -->
+        <!-- SELECTED LEGAL WRITING -->
+
+        <section id="writing">
+
+            <div class="section-header">
+
+                <p class="section-number">
+                    04 / Selected Legal Writing
+                </p>
+
+                <h2>
+                    Legal writing & appellate advocacy.
+                </h2>
+
+            </div>
+
+
+            <div class="writing-list">
+
+
+                <!-- FIRST AMENDMENT -->
+
+                <article class="writing-item">
+
+                    <div class="writing-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <p class="writing-category">
+                            Constitutional Law · First Amendment
+                        </p>
+
+                        <h3>
+                            First Amendment & Public Employee Speech
+                        </h3>
+
+                        <p class="writing-subtitle">
+                            Moot Court Brief · Appellate Advocacy
+                        </p>
+
+                        <p class="writing-description">
+                            Brief addressing First Amendment protections
+                            for public employees and the competing interests
+                            of an individual speaker and a public university
+                            under the Pickering–Connick framework.
+                        </p>
+
+                    </div>
+
+                    <a
+                        class="writing-link"
+                        href="Rin-Choi-First-Amendment-Brief.pdf"
+                        target="_blank"
+                    >
+                        View PDF ↗
+                    </a>
+
+                </article>
+
+
+
+                <!-- FIFTH AMENDMENT -->
+
+                <article class="writing-item">
+
+                    <div class="writing-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <p class="writing-category">
+                            Constitutional Law · Privacy · Technology
+                        </p>
+
+                        <h3>
+                            Fifth Amendment & Biometric Privacy
+                        </h3>
+
+                        <p class="writing-subtitle">
+                            Moot Court Brief · Appellate Advocacy
+                        </p>
+
+                        <p class="writing-description">
+                            Brief examining compelled biometric unlocking,
+                            testimonial communication under the Fifth
+                            Amendment, and application of the
+                            foregone-conclusion doctrine to digital devices.
+                        </p>
+
+                    </div>
+
+                    <a
+                        class="writing-link"
+                        href="Rin-Choi-Fifth-Amendment-Brief.pdf"
+                        target="_blank"
+                    >
+                        View PDF ↗
+                    </a>
+
+                </article>
+
+
+
+                <!-- TRADEMARK -->
+
+                <article class="writing-item">
+
+                    <div class="writing-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <p class="writing-category">
+                            Trademark Law · Appellate Advocacy
+                        </p>
+
+                        <h3>
+                            Trademark Infringement & Likelihood of Confusion
+                        </h3>
+
+                        <p class="writing-subtitle">
+                            Appellate Writing Sample · Ninth Circuit
+                        </p>
+
+                        <p class="writing-description">
+                            Selected independently researched and drafted
+                            portions of an appellate brief analyzing
+                            similarity of marks and likelihood of expansion
+                            under the Sleekcraft factors.
+                        </p>
+
+                    </div>
+
+                    <a
+                        class="writing-link"
+                        href="Rin-Choi-Trademark-Writing-Sample.pdf"
+                        target="_blank"
+                    >
+                        View PDF ↗
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- LEADERSHIP -->
 
         <section id="leadership">
 
             <div class="section-header">
 
                 <p class="section-number">
-                    04 / Leadership
+                    05 / Leadership
                 </p>
 
                 <h2>
@@ -1174,16 +1423,14 @@
 
 
 
-        <!-- =========================================
-             RESEARCH
-        ========================================== -->
+        <!-- RESEARCH -->
 
         <section id="research">
 
             <div class="section-header">
 
                 <p class="section-number">
-                    05 / Research
+                    06 / Research
                 </p>
 
                 <h2>
@@ -1218,16 +1465,14 @@
 
 
 
-        <!-- =========================================
-             HONORS
-        ========================================== -->
+        <!-- HONORS -->
 
         <section id="honors">
 
             <div class="section-header">
 
                 <p class="section-number">
-                    06 / Selected Honors
+                    07 / Selected Honors
                 </p>
 
                 <h2>
@@ -1247,11 +1492,11 @@
                     </span>
 
                     <h3>
-                        3rd Best Team
+                        National Semifinalist
                     </h3>
 
                     <p>
-                        AMCA National Tournament
+                        American Moot Court Association National Tournament
                     </p>
 
                 </div>
@@ -1268,24 +1513,7 @@
                     </h3>
 
                     <p>
-                        AMCA National Tournament
-                    </p>
-
-                </div>
-
-
-                <div class="honor">
-
-                    <span class="honor-year">
-                        2025
-                    </span>
-
-                    <h3>
-                        Invitational Champion
-                    </h3>
-
-                    <p>
-                        CSULB Moot Court Invitational
+                        American Moot Court Association National Tournament
                     </p>
 
                 </div>
@@ -1311,7 +1539,7 @@
                 <div class="honor">
 
                     <span class="honor-year">
-                        2024 · 2025
+                        2024–2025
                     </span>
 
                     <h3>
@@ -1320,6 +1548,23 @@
 
                     <p>
                         University of Southern California
+                    </p>
+
+                </div>
+
+
+                <div class="honor">
+
+                    <span class="honor-year">
+                        Academic
+                    </span>
+
+                    <h3>
+                        Legal Studies Diversity & Inclusion Scholarship
+                    </h3>
+
+                    <p>
+                        USC Gould School of Law
                     </p>
 
                 </div>
@@ -1348,14 +1593,12 @@
 
 
 
-        <!-- =========================================
-             CONTACT
-        ========================================== -->
+        <!-- CONTACT -->
 
         <section class="contact" id="contact">
 
             <p class="section-number">
-                07 / Contact
+                08 / Contact
             </p>
 
             <h2>
@@ -1404,9 +1647,7 @@
 
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
+    <!-- FOOTER -->
 
     <footer>
 
